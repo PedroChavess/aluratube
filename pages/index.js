@@ -1,24 +1,19 @@
 import React from "react";
 import config from "../config.json";
 import styled from "styled-components";
-import { CSSReset } from "../src/components/CSSReset";
 import  Menu  from "../src/components/Menu";
 import  {StyledTimeline}  from "../src/components/Timeline";
 
-function HomePage() {
-    const estilosDaHomepage = { 
-        // backgroundColor: "red" 
-    };
+function HomePage() { 
     const [valorDoFiltro, setValorDoFiltro] = React.useState("");
 
     return (
         <>
-        <CSSReset />
+        
         <div style={{
             display: "flex",
             flexDirection: "column",
             flex: 1,
-            // backgroundColor: "red",
         }}>
             {/* Prop Drilling */}
             <Menu valorDoFiltro={valorDoFiltro} setValorDoFiltro={setValorDoFiltro}/>
@@ -43,6 +38,8 @@ export default HomePage
 
 
 const StyledHeader = styled.div`
+    background-color: ${({theme}) => theme.backgroundLevel1} ;
+
     img{
         width: 80px;
         height: 80px;
@@ -66,9 +63,8 @@ const StyledHeader = styled.div`
 `;
 
 const StyledBanner = styled.div`
-    background-color: blue;
+    background-color: black;
     background-image: url(${({ bg }) => bg});
-    /* background-image: url(${config.bg}); */
     height: 230px;
 `;
 function Header() {
@@ -87,14 +83,12 @@ function Header() {
                     </p>
                 </div>
             </section>
-
         </StyledHeader>
 
     )
 }
 
 function TimeLine({searchValue, ...propriedades}) {
-    // console.log("Dentro do componente", propriedades.playlists); 
     const playlistNames = Object.keys(propriedades.playlists);
     //Statement
     //Retorno por expressão
