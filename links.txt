@@ -1,1 +1,7 @@
 https://github.com/alura-challenges/aluratube/pull/2/files#
+
+https://gist.github.com/omariosouto/73904f576b956c8a95454cb612f8cb16
+
+
+tech guide:
+	https://techguide.sh/
